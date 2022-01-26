@@ -5,6 +5,7 @@ import { Container,ContentText,TextInfo,Titulo,
     TextInput, Content, TextCriarConta,ContentCenter } from './styled'
 
 //Icone 
+import { Foundation } from '@expo/vector-icons';
 import IconVisivel from '../../assets/svg/visivel.svg'
 import cores from '../../utils/style/cores'
 import ButtonPrimary from '../../components/ButtonPrimary/ButtonPrimary'
@@ -22,30 +23,25 @@ export default function ResetPassword()
             <Content>
 
                 <ContentText>
-                    <Titulo>Criar nova senha!</Titulo>
+                    <Titulo>Digite o seu número de</Titulo>
+                    <Titulo>telefone</Titulo>
                 </ContentText>
 
                         
 
-                        <ShadowContainer size={22} Icone={IconVisivel} activeOpacity={0.7}
+                        <ShadowContainer size={22}  activeOpacity={0.7}
+                            Icone={()=><Foundation name="telephone" size={24} color={cores.primarary40} />}
                             IconeClick={()=> setshowPassword(!showPassword)}>
                             <TextInput  placeholder={'Senha'}
                                 placeholderTextColor={cores.primarary}
                                 secureTextEntry={showPassword}
-                                style={{paddingLeft:10}}
+                                style={{paddingLeft:5}}
+                                keyboardType='phone-pad'
                                 
                                 />
                         </ShadowContainer>
 
-                        <ShadowContainer size={22} Icone={IconVisivel} activeOpacity={0.7}
-                            IconeClick={()=> setshowPassword(!showPassword)}>
-                            <TextInput  placeholder={'Confirmar senha'}
-                                placeholderTextColor={cores.primarary}
-                                secureTextEntry={showPassword}
-                                style={{paddingLeft:10}}
-                                
-                                />
-                        </ShadowContainer>
+                        
 
                 <ButtonPrimary titulo="CONTINUE" color={cores.primarary80}
                     click={()=> console.log('aa')}

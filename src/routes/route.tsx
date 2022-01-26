@@ -20,17 +20,25 @@ import UserIcon  from '../assets/svg/User.svg'
 import { useNavigation } from '@react-navigation/core';
 import { View } from 'react-native';
 import Perfil from '../pages/Perfil/Perfil';
+import Detalhe from '../pages/DetalhesRota/Detalhe';
+import { color } from 'react-native-reanimated';
 
-const {Navigator,Screen}= createNativeStackNavigator()
+const Stack = createNativeStackNavigator()
 const Drawer  = createDrawerNavigator() 
 
 export default function Route() 
 {
     return (
-        <Navigator screenOptions={{headerShown:false}}>
-            <Screen name="Drawer" component={DrawerContainer}/>
-            <Screen name="Perfil" component={Perfil}/>
-        </Navigator>
+        <Stack.Navigator screenOptions={{headerShown:false}}>
+            <Stack.Screen name="Drawer" component={DrawerContainer}/>
+            <Stack.Screen name="Perfil" component={Perfil}/>
+            <Stack.Screen name="Detalhe" component={Detalhe} options={{
+                headerShown:true,headerShadowVisible:false,
+                headerTitleStyle:{color:cores.grey},
+                headerBackTitleVisible:false,
+                headerTransparent:true             
+            }}/>
+        </Stack.Navigator>
     )
 }
 export function DrawerContainer() 

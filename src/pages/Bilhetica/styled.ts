@@ -10,9 +10,12 @@ justify-content: space-evenly;
 `;
 
 export const Center = styled.View`
-width: 102%;
-height: 25%;
+width: 90%;
+height: 60px;
 align-self: center;
+justify-content: center;
+align-items: center;
+border: 0.5px solid ${cores.primarary} ;
 `;
 
 export const DateContainer = styled.View`
@@ -21,7 +24,7 @@ justify-content: center;
 align-items: center;
 `;
 export const TextoPartida = styled.Text`
-color: ${cores.primarary};
+color: ${cores.primarary80};
 font-size: 18px;
 font-weight: bold;
 `;
@@ -31,7 +34,7 @@ font-size: 45px;
 margin: 0px 10px;
 `;
 export const TextoMesSemana = styled.Text`
-color: ${cores.primarary};
+color: ${cores.primarary80};
 font-size: 15px;
 `;
 
@@ -40,7 +43,7 @@ width: 100%;
 height:80px;
 align-self: center;
 border-width: 2px;
-border-color: ${cores.primarary};
+border-color: ${cores.primarary40};
 flex-direction: row;
 align-items: center;
 justify-content: center;

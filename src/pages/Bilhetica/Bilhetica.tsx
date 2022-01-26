@@ -8,7 +8,7 @@ import { Container, Center, DateContainer, TextoPartida,
     TextoDia, TextoMesSemana, InfoContainer, Box, 
     BoxSeparator, Texto, Titulo, LeftButton, 
     ButtonReservar,ButtonReservarTexto} from './styled'
-import cores from '../../utils/style/cores';
+import cores, { sombra } from '../../utils/style/cores';
 
 const dados = [1,2,3]
 
@@ -29,7 +29,7 @@ export default function Reserva()
             <Selection tipo='origin'/>
             <Selection tipo='destino'/>
             
-            <Center>
+            <Center style={sombra}>
 
                 <DateContainer>
                     <TextoPartida>Partida</TextoPartida>
@@ -39,7 +39,7 @@ export default function Reserva()
                         Terca feira
                         </TextoMesSemana>
                 </DateContainer>
-                <InfoContainer>
+                {/* <InfoContainer>
                     <Box>
                         <Titulo>VIAJANTE </Titulo>
                         <Texto>1 adulto</Texto>
@@ -64,7 +64,7 @@ export default function Reserva()
                                     <Menu.Item onPress={() => {}} title="Item 2" />
                                     <Divider />
                                     <Menu.Item onPress={() => {}} title="Item 3" />
-                                </Menu> */}
+                                </Menu> 
                     </Box>
                     <BoxSeparator/>
                     <Box style={{paddingLeft:10}}>
@@ -77,7 +77,7 @@ export default function Reserva()
                     </Box>
 
 
-                </InfoContainer>
+                </InfoContainer> */}
 
             </Center>
 

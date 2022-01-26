@@ -11,6 +11,7 @@ import ButtonPrimary from '../../components/ButtonPrimary/ButtonPrimary'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import KeyBoardAvoidWrapper from '../../components/KeyBoardAvoidWrapper/KeyBoardAvoidWrapper'
 import Header from '../../components/HeaderSign/Header'
+import { Foundation,AntDesign } from '@expo/vector-icons';
 
 export default function SignUp() 
 {
@@ -26,22 +27,25 @@ export default function SignUp()
                 </ContentText>
 
                         <ShadowContainer 
+                        Icone={()=><AntDesign name="user" size={24} color={cores.primarary40} />}
                             activeOpacity={1}>
-                            <TextInput  placeholder={'Telefone'}
-                                placeholderTextColor={cores.primarary}
-                                
-                                />
-                        </ShadowContainer>
-                        
-                        <ShadowContainer activeOpacity={0.7}
-                            IconeClick={()=> setshowPassword(!showPassword)}>
                             <TextInput  placeholder={'Nome completo'}
                                 placeholderTextColor={cores.primarary}
                                 
                                 />
                         </ShadowContainer>
                         
+                        <ShadowContainer activeOpacity={0.7}
+                        Icone={()=><Foundation name="telephone" size={24} color={cores.primarary40}/>}
+                            IconeClick={()=> setshowPassword(!showPassword)}>
+                            <TextInput  placeholder={'Telefone'}
+                                placeholderTextColor={cores.primarary}
+                                
+                                />
+                        </ShadowContainer>
+                        
                         <ShadowContainer 
+                            Icone={()=><AntDesign name="idcard" size={24} color={cores.primarary40}/>}
                             activeOpacity={1}>
                             <TextInput  placeholder={'Numero do BI'}
                                 placeholderTextColor={cores.primarary}
@@ -49,17 +53,18 @@ export default function SignUp()
                                 />
                         </ShadowContainer>
 
-                        <ShadowContainer size={22} Icone={IconAgenda} activeOpacity={0.7}
+                        <ShadowContainer size={22} activeOpacity={0.7}
+                            Icone={()=><AntDesign name="lock" size={24} color={cores.primarary40}/>}
                             IconeClick={()=> setshowPassword(!showPassword)}>
                             <TextInput  placeholder={'Senha'}
                                 placeholderTextColor={cores.primarary}
                                 secureTextEntry={showPassword}
-                                style={{paddingLeft:10}}
                                 
                                 />
                         </ShadowContainer>
 
                         <ShadowContainer  activeOpacity={0.7}
+                            Icone={()=><AntDesign name="lock" size={24} color={cores.primarary40}/>}
                             IconeClick={()=> setshowPassword(!showPassword)}>
                             <TextInput  placeholder={'Cidade, Municipio, Bairro'}
                                 placeholderTextColor={cores.primarary}                                

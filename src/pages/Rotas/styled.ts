@@ -53,3 +53,8 @@ border-color: ${cores.primarary80};
 justify-content: center;
 align-items: center;
 `;
+export const FlatListContainer = styled.View`
+height: 77%;
+`;
+export const FlatList = styled.FlatList`
+`;

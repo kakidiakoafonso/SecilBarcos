@@ -6,9 +6,10 @@
      primarary40: '#f6fcff',
      grey: '#8d8d8d',
      dark: '#e1e1e1',
+     black: '#000',
  }
  export const sombra = {
-    shadowColor:"#002d74",
+    shadowColor:"#000",
     shadowOffset:{
     width: 0,
     height: 6,

@@ -14,6 +14,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import KeyBoardAvoidWrapper from '../../components/KeyBoardAvoidWrapper/KeyBoardAvoidWrapper'
 import Header from '../../components/HeaderSign/Header'
 import { useNavigation } from '@react-navigation/core'
+import { AntDesign,MaterialIcons } from '@expo/vector-icons';
 
 export default function Login() 
 {
@@ -27,18 +28,21 @@ export default function Login()
 
                 <ContentText>
                     <Titulo>Entrar na minha conta!</Titulo>
-                    <TextInfo>Faca login com numero de telefone</TextInfo>
+                    <TextInfo>Faça login com o número de telefone</TextInfo>
                 </ContentText>
 
                 <ContentCenter>
-                        <ShadowContainer Icone={IconCheck}
+                        <ShadowContainer Icone={()=><AntDesign name="user" size={24} color={cores.primarary40} />}
                         activeOpacity={1}>
                             <TextInput  placeholder={'User name'}
                                 placeholderTextColor={cores.primarary}
                                 
                                 />
                         </ShadowContainer>
-                        <ShadowContainer Icone={Visivel} activeOpacity={0.7}
+                        <ShadowContainer activeOpacity={0.7}
+
+                            RigthIcone={()=><MaterialIcons name={showPassword? "visibility":"visibility-off"} size={24} color={cores.primarary80} />}
+                            Icone={()=><MaterialIcons name={showPassword? "visibility":"visibility-off"} size={24} color={cores.primarary40} />}
                             IconeClick={()=> setshowPassword(!showPassword)}>
                             <TextInput  placeholder={'Senha'}
                                 placeholderTextColor={cores.primarary}

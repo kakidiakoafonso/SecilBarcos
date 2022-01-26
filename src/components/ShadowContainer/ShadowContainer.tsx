@@ -1,24 +1,28 @@
 import React,{ReactNode} from 'react'
-import { TouchableOpacity,TouchableOpacityProps } from 'react-native'
+import { TouchableOpacityProps } from 'react-native'
 import cores, { sombra } from '../../utils/style/cores'
-import { Container} from './styled'
+import { Container,TouchableOpacity} from './styled'
 
 type Props =  TouchableOpacityProps & {
     children: ReactNode,
-    Icone?: any
+    Icone?: any,
+    RigthIcone?: any,
     IconeClick?: ()=>void,
     size?: number
 }
-export default function ShadowContainer({size=30,Icone,children,IconeClick,...rest}:Props) 
+export default function ShadowContainer({size=30,Icone,RigthIcone,
+    children,IconeClick,...rest}:Props) 
 {
     const tamanho = size
     return (
         <Container style={sombra}>
-            {children}
             {Icone && 
             <TouchableOpacity onPress={IconeClick} {...rest}>
                 <Icone width={tamanho} height={tamanho}/>
             </TouchableOpacity>}
+            {children}
+
+            {RigthIcone && <RigthIcone/>}
         </Container>
     )
 }
