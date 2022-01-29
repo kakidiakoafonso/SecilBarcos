@@ -43,18 +43,20 @@ font-size:18px;
 
 export const ButtonVerTodos = styled.TouchableOpacity`
 width: 90%;
-height: 60px;
+height: 50px;
 border: 1px;
 align-self: center;
-position: absolute;
+/* position: absolute; */
 bottom: 20px;
 border-radius: 8px;
 border-color: ${cores.primarary80};
 justify-content: center;
 align-items: center;
+margin-top: 10%;
 `;
 export const FlatListContainer = styled.View`
-height: 77%;
+height: 72%;
+margin-top: 5%;
 `;
 export const FlatList = styled.FlatList`
 `;

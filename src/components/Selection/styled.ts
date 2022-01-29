@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import cores from "../../utils/style/cores";
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity`
 width: 90%;
 height: 50px;
 background-color: ${cores.primarary};

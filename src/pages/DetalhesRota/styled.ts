@@ -35,7 +35,7 @@ flex-direction: row;
 
 
 export const ScrollView = styled.ScrollView`
-/* background-color: red; */
+background-color: #fff;
 width: 100%;
 height: 40%;
 padding-top: 12px;
@@ -73,9 +73,10 @@ font-weight: bold;
 
 export const BtnReservar = styled.TouchableOpacity`
 width: 90%;
-height: 55px;
+height: 50px;
 border-radius: 6px;
 margin-bottom: 6px;
+margin-top: 10px;
 background-color: ${cores.primarary80};
 justify-content: center;
 align-items: center;

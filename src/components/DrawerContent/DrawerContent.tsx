@@ -10,6 +10,7 @@ import FAQ from '../../assets/svg/question.svg'
 import Feedback from '../../assets/svg/message.svg'
 import Sobre from '../../assets/svg/question-doted.svg'
 import cores from '../../utils/style/cores'
+import { useNavigation } from '@react-navigation/native'
 const size = 30
 
 type Props ={
@@ -17,7 +18,8 @@ type Props ={
 }
 export default function DrawerContent({state}:Props) 
 {
-    console.log(state);
+    // console.log(state);
+    const nav = useNavigation()
     
     return (
         <Container>
@@ -35,9 +37,9 @@ export default function DrawerContent({state}:Props)
                 <Location width={size} height={size}/> 
                 <Texto>Terminais</Texto>
             </Item>
-            <Item>
+            <Item onPress={()=>nav.navigate("Agencia")}>
                 <Agencias width={size} height={size}/> 
-                <Texto>Agencias</Texto>
+                <Texto>Agências</Texto>
             </Item>
             <Item>
                 <Carga width={size} height={size}/> 
@@ -45,7 +47,7 @@ export default function DrawerContent({state}:Props)
             </Item>
             <Item>
                 <Verificacao width={size} height={size}/> 
-                <Texto>Verificao</Texto>
+                <Texto>Check in</Texto>
             </Item>
             <Item>
                 <FAQ width={size} height={size}/> 

@@ -1,12 +1,27 @@
 import *  as S from './styled';
-import React from 'react';
+import React ,{useState} from 'react';
 import cores, { sombra } from '../../utils/style/cores';
 import { AntDesign ,Entypo,Foundation} from '@expo/vector-icons';
-import { ScrollView } from 'react-native';
+import Modal from '../../components/ModalReservar/Modal';
+import { ActivityIndicator } from 'react-native';
 
 export default function Detalhe() 
 {
     const size = 23
+
+    const [visible, setVisible] = useState(false);
+    const [loading, setloading] = useState(false);
+    
+
+    const handleReservar = () => 
+    {
+        setloading(true)
+
+        setTimeout(() => {
+            setloading(false)
+            setVisible(true)
+        }, 2000);
+    }
   return (
     <S.Container>
         <S.TextInfoRota>
@@ -193,11 +208,20 @@ export default function Detalhe()
         
 
         </S.ScrollView>
-        <S.BtnReservar activeOpacity={0.7}>
-            <S.TextBtnReservar>
-                FAZER RESERVA
-            </S.TextBtnReservar>
+        <S.BtnReservar activeOpacity={0.7} onPress={handleReservar}>
+                {
+                    loading?
+                    <ActivityIndicator size="large" color={cores.primarary40} />
+                    :
+                    <S.TextBtnReservar>
+                        FAZER RESERVA
+                    </S.TextBtnReservar>
+                }
         </S.BtnReservar>
+
+        <Modal message='Reservado'
+            modalOpen={visible} 
+            closeModal={()=>setVisible(false)}/>
     </S.Container>
   );
 }

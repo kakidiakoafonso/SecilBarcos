@@ -7,9 +7,11 @@ background-color: ${cores.primarary40};
 position: absolute;
 z-index: 99;
 top: 20px;
-width: 50px;
-height: 40px;
+width: 35px;
+height: 35px;
 padding-left: 10px;
+align-items: center;
+justify-content: center;
 `;
 export const Right = styled.TouchableOpacity`
 /* background-color: ${cores.primarary}; */
@@ -22,4 +24,8 @@ width: 50px;
 height: 40px;
 justify-content: center;
 align-items: center;
+`;
+
+export const Titulo = styled.Text`
+font-weight: bold;
 `;

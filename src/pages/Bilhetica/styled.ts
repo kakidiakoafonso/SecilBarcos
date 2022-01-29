@@ -9,12 +9,13 @@ background-color: ${cores.primarary40};
 justify-content: space-evenly;
 `;
 
-export const Center = styled.View`
+export const Center = styled.TouchableOpacity`
 width: 90%;
-height: 60px;
+height: 50px;
 align-self: center;
 justify-content: center;
 align-items: center;
+border-radius: 4px;
 border: 0.5px solid ${cores.primarary} ;
 `;
 
@@ -30,7 +31,7 @@ font-weight: bold;
 `;
 export const TextoDia = styled.Text`
 color: ${cores.primarary80};
-font-size: 45px;
+font-size: 40px;
 margin: 0px 10px;
 `;
 export const TextoMesSemana = styled.Text`

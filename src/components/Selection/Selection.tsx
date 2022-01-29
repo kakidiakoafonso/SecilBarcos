@@ -10,12 +10,13 @@ import cores,{sombra} from '../../utils/style/cores';
 const Iconsize = 25
 type Props = {
     tipo: "origin"| "destino",
+    onPress: ()=>void
 }
 
-export default function Selection({tipo='origin'}:Props) 
+export default function Selection({tipo='origin',onPress}:Props) 
 {
     return (
-        <Container style={sombra}>
+        <Container style={sombra} activeOpacity={0.7} onPress={onPress}>
             {
             tipo==='origin'?
             <Icon width={Iconsize} height={Iconsize}/>
