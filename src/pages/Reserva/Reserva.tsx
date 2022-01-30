@@ -28,7 +28,7 @@ export default function Bilhetica() {
                                         <S.PopOverText>Editar</S.PopOverText>
                                     </S.PopOverButton>
                                 </S.PopOver>}
-                        pointerColor={cores.primarary80}
+                        pointerColor={'rgba(0,0,0,0.6)'}
                         withPointer={true}
                         overlayColor={"rgba(0,0,0,0)"}
                         containerStyle={[{height:70,backgroundColor:'#fff'},sombra]}

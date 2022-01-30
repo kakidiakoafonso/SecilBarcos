@@ -1,14 +1,16 @@
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import React from 'react'
+import React, { useContext } from 'react'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { Tooltip, Text, colors } from 'react-native-elements';
 
 import ResetPassword from '../pages/ResetPassword/ResetPassword'
 import Reserva from '../pages/Bilhetica/Bilhetica';
 import Bilhetica from '../pages/Reserva/Reserva';
 import Rotas from '../pages/Rotas/Rotas';
-import cores from '../utils/style/cores';
-import {Label, Left, Right, Titulo } from './styled';
+import cores, { sombra } from '../utils/style/cores';
+import {Left, Right, Titulo } from './styled';
+import * as S from '../pages/Reserva/styled';
 
 import DraweCustomizado from '../components/DrawerContent/DrawerContent'
 
@@ -23,6 +25,8 @@ import Perfil from '../pages/Perfil/Perfil';
 import Detalhe from '../pages/DetalhesRota/Detalhe';
 import { color } from 'react-native-reanimated';
 import Agencia from '../pages/Agencia/Agencia';
+import { MaterialIcons } from '@expo/vector-icons';
+import { UserContext } from '../context/User';
 
 const Stack = createNativeStackNavigator()
 const Drawer  = createDrawerNavigator() 
@@ -71,14 +75,40 @@ const focusedStyle = {color:cores.primarary,borderBottomWidth:2,borderBottomColo
 const unfocusedStyle = {color:cores.grey}
 function MyTabs() 
 {
+    const perfilClicked = () => {
+        settooltipVisible(false)
+        nav.navigate('Perfil')
+    }
     const nav = useNavigation()
+    const {setlogado} = useContext(UserContext)
+    const [tooltipVisible, settooltipVisible] = React.useState(false);
   return (
       <>
       <Left onPress={()=>nav.openDrawer()}>
             <MenuIcon width={20} height={20} />
       </Left>
-      <Right onPress={()=>nav.navigate('Perfil')}>
-            <UserIcon width={20} height={20} fill={cores.primarary}/>
+      <Right>
+            
+            <Tooltip
+                        popover={<S.PopOver style={{paddingRight:13}}>
+                                    <S.PopOverButton onPress={perfilClicked}>
+                                        <UserIcon width={20} height={20} fill={cores.primarary}/>
+                                        <S.PopOverText>Perfil</S.PopOverText>
+                                    </S.PopOverButton>
+                                    <S.PopOverButton onPress={()=>setlogado(false)}>
+                                        <MaterialIcons name="logout" size={24} color={cores.primarary} />
+                                        <S.PopOverText>Sair</S.PopOverText>
+                                    </S.PopOverButton>
+                                </S.PopOver>}
+                        pointerColor={'rgba(0,0,0,0.6)'}
+                        withPointer={true}
+                        overlayColor={"rgba(0,0,0,0)"}
+                        width={150}
+                        // visible={tooltipVisible}
+                        containerStyle={[{height:70,backgroundColor:'#fff'},sombra]}
+                        >
+                        <UserIcon width={20} height={20} fill={cores.primarary}/>
+                    </Tooltip>
       </Right>
     <Tab.Navigator initialRouteName='Reserva'
     

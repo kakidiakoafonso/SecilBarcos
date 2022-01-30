@@ -37,16 +37,15 @@ color: ${cores.grey};
 font-weight: bold;
 `;
 export const BottomContainer = styled.SafeAreaView`
-width: 100%;
-height: 40%;
-background-color: #fff;
+width: 90%;
+height: 35%;
+/* background-color: red; */
 align-self: center;
 border-color: ${cores.grey};
 border-bottom-right-radius: 6px;
 border-bottom-left-radius: 6px;
 flex-direction: row;
 align-items: center;
-padding-left: 7%;
 `;
 
 export const FlatList = styled.FlatList`

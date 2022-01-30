@@ -29,3 +29,23 @@ align-items: center;
 export const Titulo = styled.Text`
 font-weight: bold;
 `;
+
+
+
+export const PopOver = styled.View`
+/* background-color: pink; */
+width: 100%;
+align-items: flex-end;
+`;
+export const PopOverButton = styled.TouchableOpacity`
+width: 80%;
+/* background-color: red; */
+align-items: flex-end;
+flex-direction: row;
+justify-content: space-between;
+`;
+export const PopOverText = styled.Text`
+font-weight: bold;
+font-size: 18px;
+color: ${cores.grey};
+`;

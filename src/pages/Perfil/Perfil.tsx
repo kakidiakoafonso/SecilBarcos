@@ -10,6 +10,7 @@ import DateIcon from '../../assets/svg/Date.svg'
 import AdressIcon from '../../assets/svg/home.svg'
 import cores from '../../utils/style/cores'
 import Modal from '../../components/ModalPerfil/Modal';
+import KeyboardView from '../../components/KeyBoardAvoidWrapper/KeyBoardAvoidWrapper';
 import { ActivityIndicator } from 'react-native';
 
 const sombra = {shadowColor: "#000",
@@ -37,6 +38,7 @@ export default function Perfil()
      }
 
      return (
+        <KeyboardView>
        <Container>
            <TopContainer>
 
@@ -151,5 +153,6 @@ export default function Perfil()
 
                 <Modal closeModal={()=>setmodalVisible(false)} modalOpen={modalVisible}/>
        </Container>
+       </KeyboardView>
     )
 }

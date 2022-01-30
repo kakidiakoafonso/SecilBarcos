@@ -1,5 +1,5 @@
-import React ,{useState} from 'react'
-import { View, Text, } from 'react-native'
+import React ,{useContext, useState} from 'react'
+import { View, Text, ActivityIndicator, } from 'react-native'
 import ShadowContainer from '../../components/ShadowContainer/ShadowContainer'
 import { Container,ContentText,TextInfo,Titulo,
     TextInput, Content, TextCriarConta,ContentCenter,
@@ -15,11 +15,24 @@ import KeyBoardAvoidWrapper from '../../components/KeyBoardAvoidWrapper/KeyBoard
 import Header from '../../components/HeaderSign/Header'
 import { useNavigation } from '@react-navigation/core'
 import { AntDesign,MaterialIcons } from '@expo/vector-icons';
+import { UserContext } from '../../context/User'
 
 export default function Login() 
 {
     const nav = useNavigation()
     const [showPassword, setshowPassword] = useState<boolean>(true)
+    const [loading, setloading] = useState<boolean>(false)
+    const {setlogado} = useContext(UserContext)
+
+
+    const handleLogin = ()=> {
+        setloading(true)
+        setTimeout(()=>{
+            setloading(false)
+            setlogado(true)
+            
+        },1500)
+    }
     return (
         <KeyBoardAvoidWrapper>
         <Container>
@@ -60,12 +73,12 @@ export default function Login()
                 </ContentCenter>
 
                 <ButtonPrimary titulo="CONTINUE" color={cores.primarary80}
-                    click={()=> console.log('aa')}
+                    click={handleLogin} loading={loading}
                 />
-                    <TouchableOpacity onPress={()=> nav.navigate('SignUp')}>
-                        <TextCriarConta>
+                    <TouchableOpacity onPress={()=>nav.navigate('SignUp')}>
+                            <TextCriarConta>
                             Criar conta
-                        </TextCriarConta>
+                            </TextCriarConta>
                     </TouchableOpacity>
             
             </Content>
